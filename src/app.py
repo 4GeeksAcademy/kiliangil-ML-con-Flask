@@ -27,4 +27,4 @@ def index():
     else:
         pred_class = None
     
-    return render_template("index.html", prediction = pred_class)
+    return render_template("Index.html", prediction = pred_class)

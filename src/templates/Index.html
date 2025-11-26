@@ -2,38 +2,49 @@
 <html>
 <head>
     <title>Predicción Diabetes</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 50px auto; padding: 20px; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
+        button { background: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #0056b3; }
+        .result { margin-top: 20px; padding: 15px; border-radius: 4px; }
+        .diabetic { background: #f8d7da; color: #721c24; }
+        .not-diabetic { background: #d1ecf1; color: #0c5460; }
+    </style>
 </head>
 <body>
     <h1>Predicción de Diabetes</h1>
     
     <form method="POST">
-        <div>
-            <label>Glucosa (Glucose):</label>
+        <div class="form-group">
+            <label for="val1">Glucosa (Glucose):</label>
             <input type="number" step="any" name="val1" placeholder="Ej: 120" required>
         </div>
         
-        <div>
-            <label>Presión Arterial (Blood Pressure):</label>
+        <div class="form-group">
+            <label for="val2">Presión Arterial (Blood Pressure):</label>
             <input type="number" step="any" name="val2" placeholder="Ej: 80" required>
         </div>
         
-        <div>
-            <label>Grosor de Piel (Skin Thickness):</label>
+        <div class="form-group">
+            <label for="val3">Grosor de Piel (Skin Thickness):</label>
             <input type="number" step="any" name="val3" placeholder="Ej: 25" required>
         </div>
         
-        <div>
-            <label>Insulina (Insulin):</label>
+        <div class="form-group">
+            <label for="val4">Insulina (Insulin):</label>
             <input type="number" step="any" name="val4" placeholder="Ej: 150" required>
         </div>
         
-        <div>
-            <label>Índice de Masa Corporal (BMI):</label>
+        <div class="form-group">
+            <label for="val5">Índice de Masa Corporal (BMI):</label>
             <input type="number" step="any" name="val5" placeholder="Ej: 28.5" required>
         </div>
         
-        <div>
-            <label>Edad (Age):</label>
+        <div class="form-group">
+            <label for="val6">Edad (Age):</label>
             <input type="number" step="any" name="val6" placeholder="Ej: 45" required>
         </div>
         
@@ -41,7 +52,9 @@
     </form>
 
     {% if prediction %}
-        <h2>Resultado: {{ prediction }}</h2>
+        <div class="result {% if prediction == 'Diabético' %}diabetic{% else %}not-diabetic{% endif %}">
+            <h2>Resultado: {{ prediction }}</h2>
+        </div>
     {% endif %}
 </body>
 </html>
