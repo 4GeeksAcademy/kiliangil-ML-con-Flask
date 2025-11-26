@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Predicción Diabetes</title>
+</head>
+<body>
+    <h1>Predicción de Diabetes</h1>
+    
+    <form method="POST">
+        <div>
+            <label>Glucosa (Glucose):</label>
+            <input type="number" step="any" name="val1" placeholder="Ej: 120" required>
+        </div>
+        
+        <div>
+            <label>Presión Arterial (Blood Pressure):</label>
+            <input type="number" step="any" name="val2" placeholder="Ej: 80" required>
+        </div>
+        
+        <div>
+            <label>Grosor de Piel (Skin Thickness):</label>
+            <input type="number" step="any" name="val3" placeholder="Ej: 25" required>
+        </div>
+        
+        <div>
+            <label>Insulina (Insulin):</label>
+            <input type="number" step="any" name="val4" placeholder="Ej: 150" required>
+        </div>
+        
+        <div>
+            <label>Índice de Masa Corporal (BMI):</label>
+            <input type="number" step="any" name="val5" placeholder="Ej: 28.5" required>
+        </div>
+        
+        <div>
+            <label>Edad (Age):</label>
+            <input type="number" step="any" name="val6" placeholder="Ej: 45" required>
+        </div>
+        
+        <button type="submit">Predecir</button>
+    </form>
+
+    {% if prediction %}
+        <h2>Resultado: {{ prediction }}</h2>
+    {% endif %}
+</body>
+</html>
