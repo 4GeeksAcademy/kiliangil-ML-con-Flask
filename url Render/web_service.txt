@@ -1,0 +1,2 @@
+Enlace a la app:
+https://predecir-diabetes-con-flask-render.onrender.com 
